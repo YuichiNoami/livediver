@@ -39,27 +39,31 @@ Cache::config('default', array('engine' => 'File'));
  *     'Vendor'                    => array('/path/to/vendors/', '/next/path/to/vendors/'),
  *     'Plugin'                    => array('/path/to/plugins/', '/next/path/to/plugins/'),
  * ));
+ *
  */
 
 /**
- * Custom Inflector rules can be set to correctly pluralize or singularize table, model, controller names or whatever other
+ * Custom Inflector rules, can be set to correctly pluralize or singularize table, model, controller names or whatever other
  * string is passed to the inflection functions
  *
  * Inflector::rules('singular', array('rules' => array(), 'irregular' => array(), 'uninflected' => array()));
  * Inflector::rules('plural', array('rules' => array(), 'irregular' => array(), 'uninflected' => array()));
+ *
  */
 
 /**
  * Plugins need to be loaded manually, you can either load them one by one or all of them in a single call
- * Uncomment one of the lines below, as you need. Make sure you read the documentation on CakePlugin to use more
+ * Uncomment one of the lines below, as you need. make sure you read the documentation on CakePlugin to use more
  * advanced ways of loading plugins
  *
  * CakePlugin::loadAll(); // Loads all plugins at once
- * CakePlugin::load('DebugKit'); // Loads a single plugin named DebugKit
+ * CakePlugin::load('DebugKit'); //Loads a single plugin named DebugKit
+ *
  */
+CakePlugin::loadAll();
 
 /**
- * You can attach event listeners to the request lifecycle as Dispatcher Filter . By default CakePHP bundles two filters:
+ * You can attach event listeners to the request lifecycle as Dispatcher Filter . By Default CakePHP bundles two filters:
  *
  * - AssetDispatcher filter will serve your asset files (css, images, js, etc) from your themes and plugins
  * - CacheDispatcher filter will read the Cache.check configure variable and try to serve cached content generated from controllers
@@ -82,14 +86,15 @@ Configure::write('Dispatcher.filters', array(
 /**
  * Configures default file logging options
  */
+ // Log settings
 App::uses('CakeLog', 'Log');
-CakeLog::config('debug', array(
-	'engine' => 'File',
-	'types' => array('notice', 'info', 'debug'),
-	'file' => 'debug',
-));
-CakeLog::config('error', array(
-	'engine' => 'File',
-	'types' => array('warning', 'error', 'critical', 'alert', 'emergency'),
-	'file' => 'error',
-));
+App::uses('ConsoleOutput', 'Console');
+CakeLog::config('debug', [
+   'engine' => 'ConsoleLog',
+   'stream' => new ConsoleOutput(),
+]);
+CakeLog::config('error', [
+   'engine' => 'ConsoleLog',
+   'stream' => new ConsoleOutput('php://stderr'),
+]);
+CakePlugin::load(array('TwitterBootstrap','Search'));
