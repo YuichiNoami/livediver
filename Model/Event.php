@@ -45,8 +45,8 @@ class Event extends AppModel {
 			),
 		),
 		'title' => array(
-			'notEmpty' => array(
-				'rule' => array('notEmpty'),
+			'notBlank' => array(
+				'rule' => array('notBlank'),
 				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
@@ -105,7 +105,7 @@ class Event extends AppModel {
 			),
 		),
 		'place' => array(
-			'notEmpty' => array(
+			'notBlank' => array(
 				'rule' => array('notBlank'),
 				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,

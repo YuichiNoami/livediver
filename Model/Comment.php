@@ -40,8 +40,8 @@ class Comment extends AppModel {
 			),
 		),
 		'comment' => array(
-			'notEmpty' => array(
-				'rule' => array('notEmpty'),
+			'notBlank' => array(
+				'rule' => array('notBlank'),
 				'message' => '空のコメントを投稿することはできません。',
 				//'allowEmpty' => false,
 				//'required' => false,
