@@ -15,6 +15,6 @@
 	<h3><?php echo __('アクション'); ?></h3>
 	<ul>
 
-		<li><?php echo $this->Html->link(__('アーティスト一覧を観る'), array('action' => 'index')); ?></li>
+		<li><?php echo $this->Html->link(__('アーティスト一覧を見る'), array('action' => 'index')); ?></li>
 	</ul>
 </div>

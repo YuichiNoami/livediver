@@ -445,7 +445,7 @@ EOF;
 			if ($this->Event->EventsUser->save($this->request->data)) {
 				$this->Session->setFlash(__('このイベントを「いくよ！」に登録しました。'));
 			} else {
-				$this->Session->setFlash(__('このイベントを「いくよ！」に登録し出来ませんでした。もう一度お試しください。'));
+				$this->Session->setFlash(__('このイベントを「いくよ！」に登録出来ませんでした。もう一度お試しください。'));
 			}
 		}
 		return $this->redirect(array('action' => 'view',$id));
