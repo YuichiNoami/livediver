@@ -1,4 +1,5 @@
-Config/database.php
-Config/core.php
-tmp/*
-.vscode/*
+/tmp/*
+/Config/core.php
+/Config/database.php
+/Vendor
+.vscode
