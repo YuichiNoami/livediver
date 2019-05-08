@@ -1,6 +1,11 @@
 <?php
 class ImportEventTask extends Shell {
+    // 使用するモデルを読み込む
     public $uses = array('Event', 'Artist', 'ArtistsEvent');
+
+    /**
+     * インポートの実行
+     */
     public function execute() {
         $data = array(
             'Event' => array(
@@ -31,6 +36,11 @@ class ImportEventTask extends Shell {
         }
     }
 
+    /**
+     * 出演アーティストをパースする
+     * 
+     * @return array
+     */
     private function parseNames($nameString) {
         $ids = array();
  
