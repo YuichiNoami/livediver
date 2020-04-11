@@ -1,15 +1,15 @@
 <div class="artistsEvents form">
-<?php echo $this->Form->create('ArtistsEvent'); ?>
+	<?php echo $this->Form->create('ArtistsEvent'); ?>
 	<fieldset>
 		<legend><?php echo __('Edit Artists Event'); ?></legend>
-	<?php
+		<?php
 		echo $this->Form->input('id');
 		echo $this->Form->input('event_id');
 		echo $this->Form->input('artist_id');
 		echo $this->Form->input('act');
-	?>
+		?>
 	</fieldset>
-<?php echo $this->Form->end(__('Submit')); ?>
+	<?php echo $this->Form->end(__('Submit')); ?>
 </div>
 <div class="actions">
 	<h3><?php echo __('Actions'); ?></h3>

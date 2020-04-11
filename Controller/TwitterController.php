@@ -27,7 +27,6 @@ class TwitterController extends AppController {
 
         if ($accessToken) {
             $this->OAuthConsumer->post('Twitter', $accessToken->key, $accessToken->secret, 'https://api.twitter.com/1.1/statuses/update.json', array('status' => 'あけましておめでとうございます'));
-            pr($this->OAuthConsumer);//バグってたらここの文字を読んでみる。
         }
         
         $this->autoRender = false;

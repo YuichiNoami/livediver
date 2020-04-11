@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Application level Controller
  *
@@ -21,17 +22,20 @@ App::uses('Controller', 'Controller');
  * @package		app.Controller
  * @link		https://book.cakephp.org/2.0/en/controllers.html#the-app-controller
  */
-class AppController extends Controller {
-	public $components = array('Auth','Session','Email');
+class AppController extends Controller
+{
+	public $components = array('Auth', 'Session', 'Email');
 
-	public function beforeFilter(){
+	public function beforeFilter()
+	{
 		$this->Auth->allow();
 		$this->set('user', $this->Auth->user());
 		$this->layout = 'bootstrap';
 	}
 
-	function _sendNewAdminMail($body) {
-	    $this->Email->from    = 'LiveDiver <info@livediver.net>';
+	function _sendNewAdminMail($body)
+	{
+		$this->Email->from    = 'LiveDiver <info@livediver.net>';
 		$this->Email->to      = 'CATCH THE BEAT <info@catch-the-beat.com>';
 		$this->Email->subject = '削除申請';
 		$this->Email->send($body);

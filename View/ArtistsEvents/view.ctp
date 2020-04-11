@@ -1,5 +1,5 @@
 <div class="artistsEvents view">
-<h2><?php echo __('Artists Event'); ?></h2>
+	<h2><?php echo __('Artists Event'); ?></h2>
 	<dl>
 		<dt><?php echo __('Id'); ?></dt>
 		<dd>

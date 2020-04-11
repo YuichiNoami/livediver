@@ -1,12 +1,12 @@
 <div class="artistDatas form">
-<?php echo $this->Form->create('Register'); ?>
+	<?php echo $this->Form->create('Register'); ?>
 	<fieldset>
 		<legend><?php echo __('Register Artist'); ?></legend>
-	<?php
+		<?php
 		echo $this->Form->input('mail');
-	?>
+		?>
 	</fieldset>
-<?php echo $this->Form->end(__('Submit')); ?>
+	<?php echo $this->Form->end(__('Submit')); ?>
 </div>
 <div class="actions">
 	<h3><?php echo __('Actions'); ?></h3>
