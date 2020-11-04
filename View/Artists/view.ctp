@@ -38,6 +38,24 @@
 				<?php endforeach; ?>
 			</ul>
 		</dd>
+		<dt><?php echo __('アーティストのシェア'); ?></dt>
+		<dd>
+			<div id="tweet_artist">
+				<a href="https://twitter.com/share" class="twitter-share-button" data-lang="ja" data-text="<?php echo h($this->Text->truncate($artist['Artist']['profile'], 90, array('ellipsis' => '...', 'exact' => true, 'html' => true))) ?>" data-url="<?php echo ("https://" . $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]); ?>">ツイート</a>
+				<script>
+					! function(d, s, id) {
+						var js, fjs = d.getElementsByTagName(s)[0],
+							p = /^http:/.test(d.location) ? 'http' : 'https';
+						if (!d.getElementById(id)) {
+							js = d.createElement(s);
+							js.id = id;
+							js.src = p + '://platform.twitter.com/widgets.js';
+							fjs.parentNode.insertBefore(js, fjs);
+						}
+					}(document, 'script', 'twitter-wjs');
+				</script>
+			</div>
+		</dd>
 	</dl>
 </div>
 <div class="actions">
