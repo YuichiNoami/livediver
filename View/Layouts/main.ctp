@@ -9,10 +9,6 @@
 
 <body>
   <div id="container">
-<<<<<<< HEAD
-    <?php debug($user) ?>
-=======
->>>>>>> d7e00827551fbe22ec92c388e74eab4bbff3933a
     <?php echo $this->Session->flash(); ?>
     <div id="header">
       <div id="header_menu">

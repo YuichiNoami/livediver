@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-<?php //debug($user);	debug($willgoes)
-?>
-=======
->>>>>>> d7e00827551fbe22ec92c388e74eab4bbff3933a
 <div class="users view">
 	<h2><?php print(h($user['username'])); ?>さんのマイページ</h2>
 	<p>※マイページの内容（いくよ！とコメント）は全体に公開されますのでご注意ください。</p>
@@ -19,11 +14,6 @@
 		<p>
 			<?php echo __('コメント'); ?>
 			<ul>
-<<<<<<< HEAD
-				<?php //debug($comments); 
-				?>
-=======
->>>>>>> d7e00827551fbe22ec92c388e74eab4bbff3933a
 				<?php foreach ($comments as $comment) : ?>
 					<li><?php echo $this->Html->link($comment['Comment']['comment'], '/events/view/' . $comment['Comment']['event_id']); ?></li>
 				<?php endforeach; ?>
