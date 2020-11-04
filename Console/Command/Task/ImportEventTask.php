@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-<?php
-class ImportEventTask extends Shell {
-    public $uses = array('User');
-    public function execute() {
-        echo "Hello, I will import events.";
-    }
-=======
 <?php
 class ImportEventTask extends Shell {
     // 使用するモデルを読み込む
@@ -78,5 +70,4 @@ class ImportEventTask extends Shell {
  
         return $ids;
     }
->>>>>>> d7e00827551fbe22ec92c388e74eab4bbff3933a
 }

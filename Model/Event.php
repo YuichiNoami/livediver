@@ -171,11 +171,7 @@ class Event extends AppModel {
 	public function findCountByNames($names = array(), $criteria = null) {
         if(count($names) <= 0){
             return 0;
-<<<<<<< HEAD
-    }
-=======
    		}
->>>>>>> d7e00827551fbe22ec92c388e74eab4bbff3933a
         if(!empty($criteria)) {
             $criteria = 'AND'.$criteria;
         }
