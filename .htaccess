@@ -1,0 +1,9 @@
+RewriteEngine on
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://livediver.net/$1 [R=301,L]
+
+<IfModule mod_rewrite.c>
+	RewriteEngine on
+	RewriteRule ^$ webroot/ [L]
+	RewriteRule (.*) webroot/$1 [L]
+</IfModule>
