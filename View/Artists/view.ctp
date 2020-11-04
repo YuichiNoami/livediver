@@ -55,7 +55,6 @@
 					}(document, 'script', 'twitter-wjs');
 				</script>
 			</div>
-			<div class="fb-like" data-href="<?php echo ("https://" . $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]); ?>" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></div>
 		</dd>
 	</dl>
 </div>
