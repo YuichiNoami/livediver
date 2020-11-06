@@ -3,3 +3,4 @@
 /Config/database.php
 /Vendor
 .vscode
+.htaccess
