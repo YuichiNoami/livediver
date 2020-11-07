@@ -53,13 +53,13 @@ class ArtistsEvent extends AppModel {
  */
 
 	public $belongsTo = array(
-        'Artist' => array(
-            'className' => 'Artist',
-            'foreignKey' => 'artist_id',
-        ),
-        'Event' => array(
-            'className' => 'Event',
-            'foreignKey' => 'event_id',
-        ),
-    );
+		'Artist' => array(
+			'className' => 'Artist',
+			'foreignKey' => 'artist_id',
+		),
+		'Event' => array(
+			'className' => 'Event',
+			'foreignKey' => 'event_id',
+		),
+	);
 }

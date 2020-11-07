@@ -21,15 +21,15 @@
  */
 
 abstract class AbstractConsumer {
-    private $consumerKey = null;
-    private $consumerSecret = null;
+	private $consumerKey = null;
+	private $consumerSecret = null;
 
-    public function __construct($consumerKey, $consumerSecret) {
-        $this->consumerKey = $consumerKey;
-        $this->consumerSecret = $consumerSecret;
-    }
+	public function __construct($consumerKey, $consumerSecret) {
+		$this->consumerKey = $consumerKey;
+		$this->consumerSecret = $consumerSecret;
+	}
 
-    final public function getConsumer() {
-        return new OAuthConsumer($this->consumerKey, $this->consumerSecret);
-    }
+	final public function getConsumer() {
+		return new OAuthConsumer($this->consumerKey, $this->consumerSecret);
+	}
 }

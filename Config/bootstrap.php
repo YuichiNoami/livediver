@@ -90,11 +90,11 @@ Configure::write('Dispatcher.filters', array(
 App::uses('CakeLog', 'Log');
 App::uses('ConsoleOutput', 'Console');
 CakeLog::config('debug', [
-   'engine' => 'ConsoleLog',
-   'stream' => new ConsoleOutput(),
+	'engine' => 'ConsoleLog',
+	'stream' => new ConsoleOutput(),
 ]);
 CakeLog::config('error', [
-   'engine' => 'ConsoleLog',
-   'stream' => new ConsoleOutput('php://stderr'),
+	'engine' => 'ConsoleLog',
+	'stream' => new ConsoleOutput('php://stderr'),
 ]);
 CakePlugin::load(array('TwitterBootstrap','Search'));

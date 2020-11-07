@@ -53,13 +53,13 @@ class EventsUser extends AppModel {
  */
 
 	public $belongsTo = array(
-        'Event' => array(
-            'className' => 'Event',
-            'foreignKey' => 'event_id',
-        ),
-        'User' => array(
-            'className' => 'User',
-            'foreignKey' => 'user_id',
-        ),
-    );
+		'Event' => array(
+			'className' => 'Event',
+			'foreignKey' => 'event_id',
+		),
+		'User' => array(
+			'className' => 'User',
+			'foreignKey' => 'user_id',
+		),
+	);
 }

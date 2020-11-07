@@ -17,5 +17,5 @@ App::uses('Shell', 'Console');
  * @package       app.Console.Command
  */
 class AppShell extends Shell {
-    public $tasks = array('ImportEvent');
+	public $tasks = array('ImportEvent');
 }
