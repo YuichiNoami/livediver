@@ -1,5 +1,6 @@
 {
-    "name": "livediver",
+    "name": "2xjack/livediver",
+    "description": "Live Information Sharing Web System",
     "require": {
         "cakephp/cakephp": "2.10.*"
     },

@@ -1,8 +1,14 @@
 <h1>ログイン</h1>
-<?php print($this->Form->create('User') .
+<?php
+$options = array(
+  'label' => 'ログイン',
+  'div' => false,
+  'class' => 'btn btn-primary'
+);
+print($this->Form->create('User') .
   $this->Form->input('email', array('label' => 'メールアドレス')) .
   $this->Form->input('password', array('type' => 'password', 'label' => 'パスワード')) .
-  $this->Form->end('ログイン')); ?>
+  $this->Form->end($options)); ?>
 <div class="well">
   <?php echo $this->Html->link('パスワードを忘れた', '/users/resetpass/'); ?>
 </div>
