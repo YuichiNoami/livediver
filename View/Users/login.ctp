@@ -2,9 +2,8 @@
 <?php
 $options = array(
   'label' => 'ログイン',
-  'div' => array(
-    'class' => 'btn btn-primary',
-  )
+  'div' => false,
+  'class' => 'btn btn-primary'
 );
 print($this->Form->create('User') .
   $this->Form->input('email', array('label' => 'メールアドレス')) .
