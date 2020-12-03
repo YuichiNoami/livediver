@@ -255,6 +255,11 @@ class EventsController extends AppController
 		$willgo_count = count($willgo_count);
 		$this->set('willgo_count', $willgo_count);
 		$this->set('title_for_layout', $event['Event']['title'] . 'の詳細｜LiveDiver｜もっとライブに行きたくなる情報ポータル');
+		$data_for_layout = [
+			"url" => 'https://livediver.net/events/view/' . $id,
+			"description" => $event['Event']['title'] . 'の詳細情報',
+		];
+		$this->set('data_for_layout', $data_for_layout);
 	}
 
 	/**

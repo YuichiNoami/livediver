@@ -64,6 +64,11 @@ class ArtistsController extends AppController
 		}
 		$this->set('artist', $artist);
 		$this->set('title_for_layout', $artist['Artist']['name'] . 'の詳細｜LiveDiver｜もっとライブに行きたくなる情報ポータル');
+		$data_for_layout = [
+			"url" => 'https://livediver.net/events/view/' . $artist['Artist']['name'],
+			"description" => $artist['Artist']['name'] . 'の詳細情報',
+		];
+		$this->set('data_for_layout', $data_for_layout);
 	}
 
 	/**
