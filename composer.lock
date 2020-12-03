@@ -4,24 +4,24 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "60e7d29545e0bec160206b659613fa68",
+    "content-hash": "efc63eb950162271b015756fd41dd958",
     "packages": [
         {
             "name": "cakephp/cakephp",
-            "version": "2.10.22",
+            "version": "2.10.23",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cakephp/cakephp.git",
-                "reference": "d0c51b37422d0d2c99be74045d4439a674259308"
+                "reference": "da9f6991c5208cd54a65c3574443bfdbb2bc40d8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cakephp/cakephp/zipball/d0c51b37422d0d2c99be74045d4439a674259308",
-                "reference": "d0c51b37422d0d2c99be74045d4439a674259308",
+                "url": "https://api.github.com/repos/cakephp/cakephp/zipball/da9f6991c5208cd54a65c3574443bfdbb2bc40d8",
+                "reference": "da9f6991c5208cd54a65c3574443bfdbb2bc40d8",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.0"
+                "php": ">=5.3.0,<8.0.0"
             },
             "require-dev": {
                 "cakephp/cakephp-codesniffer": "^1.0.0",
@@ -50,7 +50,7 @@
             "keywords": [
                 "framework"
             ],
-            "time": "2020-06-07T02:16:36+00:00"
+            "time": "2020-11-28T18:49:09+00:00"
         }
     ],
     "packages-dev": [],

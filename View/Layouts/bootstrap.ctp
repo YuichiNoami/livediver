@@ -4,30 +4,35 @@
 <head>
 	<meta charset="utf-8">
 	<title>
-		<?php //echo __('CakePHP: the rapid development php framework:'); 
+		<?php
+			if (!isset($data_for_layout)) {
+				$data_for_layout = [
+					"url" => "https://livediver.net/",
+					"description" => "誰もが自由にライブの情報を登録・編集できる！もっとライブに行きたくなる情報ポータルサイトLiveDiver",
+				];
+			}
 		?>
 		<?php echo $title_for_layout; ?>
 	</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="">
-	<meta name="author" content="">
-	<meta name="description" content="誰もが自由にライブの情報を登録・編集できる！もっとライブに行きたくなる情報ポータルサイトLiveDiver" />
-	<meta name="keywords" content="ライブ,Live,ミュージシャン,バンド" />
-	<meta property="og:title" content="LiveDiver｜もっとライブに行きたくなる情報ポータル" />
+	<meta name="description" content="<?php echo $data_for_layout['description']; ?>">
+	<meta name="author" content="CATCH THE BEAT">
+	<meta name="keywords" content="ライブ,Live,ミュージシャン,バンド">
+	<meta property="og:title" content="<?php echo $title_for_layout; ?>">
 	<meta property="og:type" content="website" />
-	<meta property="og:url" content="https://livediver.net/" />
-	<meta property="og:image" content="https://livediver.net/ico/LiveDiverLogo.png" />
-	<meta property="og:site_name" content="LiveDiver｜もっとライブに行きたくなる情報ポータル" />
-	<meta property="og:description" content="誰もが自由にライブの情報を登録・編集できる！もっとライブに行きたくなる情報ポータルサイトLiveDiver" />
+	<meta property="og:url" content="<?php echo $data_for_layout['url']; ?>">
+	<meta property="og:image" content="https://livediver.net/ico/LiveDiverLogo.png">
+	<meta property="og:site_name" content="<?php echo $title_for_layout; ?>">
+	<meta property="og:description" content="<?php echo $data_for_layout['description']; ?>">
 	<meta property="fb:admins" content="100001714302441">
 	<meta property="fb:app_id" content="195940900991708">
 	<meta name="twitter:card" content="summary">
-	<meta name="twitter:site" content="@noaart">
-	<meta name="twitter:title" content="LiveDiver｜もっとライブに行きたくなる情報ポータル">
-	<meta name="twitter:url" content="https://livediver.net/">
+	<meta name="twitter:site" content="@yuichin925">
+	<meta name="twitter:title" content="<?php echo $title_for_layout; ?>">
+	<meta name="twitter:url" content="<?php echo $data_for_layout['url']; ?>">
 	<meta property="twitter:image" content="https://livediver.net/ico/LiveDiverLogo.png">
-	<meta name="twitter:description" content="誰もが自由にライブの情報を登録・編集できる！もっとライブに行きたくなる情報ポータルサイトLiveDiver">
-	<link rel="canonical" href="https://livediver.net/" />
+	<meta name="twitter:description" content="<?php echo $data_for_layout['description']; ?>">
+	<link rel="canonical" href="<?php echo $data_for_layout['url']; ?>">
 
 
 	<!-- Le styles -->
