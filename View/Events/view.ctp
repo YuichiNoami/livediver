@@ -11,9 +11,17 @@
 		<dt><?php echo __('出演者'); ?></dt>
 		<dd>
 			<ul>
-				<?php foreach ($event['Artist'] as $act) : ?>
-					<li><?php echo $this->Html->link($act['name'], '/artists/view/' . $act['name']); ?></li>
-				<?php endforeach; ?>
+				<?php
+					$event['Actor'] = [];
+					foreach ($event['Artist'] as $act) : ?>
+					<li><?php 
+							$event['Actor'][] = $act['name'];
+							echo $this->Html->link($act['name'], '/artists/view/' . $act['name']); 
+						?>
+					</li>
+				<?php
+					endforeach;
+				?>
 			</ul>
 		</dd>
 		<dt><?php echo __('日付'); ?></dt>
@@ -59,6 +67,24 @@
 					</li>
 				<?php endforeach; ?>
 			</ul>
+		</dd>
+		<dt><?php echo __('イベントのシェア'); ?></dt>
+		<dd>
+			<div id="tweet_event">
+				<a href="https://twitter.com/share" class="twitter-share-button" data-lang="ja" data-text="<?php echo h($this->Text->truncate("【".$event['Event']['title']."】\n\n".implode(", ", $event['Actor']), 90, array('ellipsis' => '...', 'exact' => true, 'html' => true)) . "の出演するイベント"); ?>" data-url="<?php echo ("https://" . $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]); ?>">ツイート</a>
+				<script>
+					! function(d, s, id) {
+						var js, fjs = d.getElementsByTagName(s)[0],
+							p = /^http:/.test(d.location) ? 'http' : 'https';
+						if (!d.getElementById(id)) {
+							js = d.createElement(s);
+							js.id = id;
+							js.src = p + '://platform.twitter.com/widgets.js';
+							fjs.parentNode.insertBefore(js, fjs);
+						}
+					}(document, 'script', 'twitter-wjs');
+				</script>
+			</div>
 		</dd>
 	</dl>
 </div>
