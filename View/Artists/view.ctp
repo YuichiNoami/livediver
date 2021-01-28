@@ -27,6 +27,7 @@
 				<?php
 				$events = $this->requestAction('/events/name/' . $artist['Artist']['name']);
 				foreach ($events as $event) : ?>
+				<?php
 					$week = array("日", "月", "火", "水", "木", "金", "土");
 					$time = strtotime($event['Event']['date']);
 					$w = date("w", $time);
