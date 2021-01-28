@@ -59,12 +59,12 @@ class UsersController extends AppController
 
 	function generatePwd()
 	{
-		$len = 8;
-		srand((float) microtime() * 1000000);
+		$len = mt_rand(16, 24);
 		$seed = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+		$end = strlen($seed) - 1;
 		$pass = "";
 		while ($len--) {
-			$pos = rand(0, 61);
+			$pos = mt_rand(0, $end);
 			$pass .= $seed[$pos];
 		}
 		return $pass;
