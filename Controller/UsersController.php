@@ -108,7 +108,7 @@ class UsersController extends AppController
 				$this->request->data['User']['agree'] = true;
 				if ($this->User->save($this->request->data)) {
 					// send mail
-					$msg = "LiveDiverをご利用いただきありがとうございます。\n新しいパスワードは以下になります。\n\n$new_pwd\n\nLiveDiver:http://livediver.net/";
+					$msg = "LiveDiverをご利用いただきありがとうございます。\n新しいパスワードは以下になります。\n\n$new_pwd\n\nLiveDiver:https://livediver.net/";
 					$toName = $someone['User']['email'];
 					$subject = "【LiveDiver】新しいパスワードをお知らせします。";
 					$from = "info@livediver.net";
