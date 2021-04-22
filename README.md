@@ -1,5 +1,5 @@
 # LiveDiver
-LiveDiver allows anyone to freely register and edit live information! This is an information portal site that makes you want to go to more gigs.
+[LiveDiver](https://livediver.net/) allows anyone to freely register and edit live information! This is an information portal site that makes you want to go to more gigs.
 
 ## License
 ![GitHub](https://img.shields.io/github/license/YuichiNoami/livediver)
