@@ -6,5 +6,5 @@ $options = array(
   'class' => 'btn btn-danger'
 );
 print($this->Form->create('User') .
-  $this->Form->input('User.email', array('label' => 'メールアドレス', 'value' => $user['email'])) .
+  $this->Form->input('User.email', array('label' => 'メールアドレス', 'value' => '')) .
   $this->Form->end($options)); ?>

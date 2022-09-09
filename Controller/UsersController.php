@@ -115,34 +115,37 @@ class UsersController extends AppController
 
 	public function resetpass()
 	{
-		$this->set('title_for_layout', 'パスワード再設定｜LiveDiver｜もっとライブに行きたくなる情報ポータル');
-		$this->set('error', false);
-		if (!empty($this->request->data)) {
-			$someone = $this->User->findByEmail($this->request->data['User']['email']);
-			if ($someone) {
-				// set new pwd
-				$new_pwd = $this->generatePwd();
-				$someone['User']['password'] = $new_pwd;
-				if ($this->User->save($someone)) {
-					// send mail
-					$msg = "LiveDiverをご利用いただきありがとうございます。\n新しいパスワードは以下になります。\n\n$new_pwd\n\nLiveDiver:https://livediver.net/";
-					$toName = $someone['User']['email'];
-					$subject = "【LiveDiver】新しいパスワードをお知らせします。";
-					$from = "info@livediver.net";
-					$header = "From: {$from}\nReply-To: {$from}\nContent-Type: text/plain;";
-					mb_send_mail($toName, $subject, $msg, $header);
+		if ($this->request->is('post') || $this->request->is('put')) {
+			if (!empty($this->request->data)) {
+				$someone = $this->User->findByEmail($this->request->data['User']['email']);
+				if ($someone) {
+					// set new pwd
+					$new_pwd = $this->generatePwd();
+					$someone['User']['password'] = $new_pwd;
+					if ($this->User->save($someone)) {
+						// send mail
+						$msg = "LiveDiverをご利用いただきありがとうございます。\n新しいパスワードは以下になります。\n\n$new_pwd\n\nLiveDiver:https://livediver.net/";
+						$toName = $someone['User']['email'];
+						$subject = "【LiveDiver】新しいパスワードをお知らせします。";
+						$from = "info@livediver.net";
+						$header = "From: {$from}\nReply-To: {$from}\nContent-Type: text/plain;";
+						mb_send_mail($toName, $subject, $msg, $header);
+						// write msg, jump
+						$this->Session->setFlash(__('新しいパスワードを送信しました。'));
+						$this->redirect('/users/login/');
+					} else {
+						$this->Session->setFlash(__('新しいパスワードの保存に失敗しました。もう一度お試しください。'));
+					}
+				} else {
 					// write msg, jump
 					$this->Session->setFlash(__('新しいパスワードを送信しました。'));
 					$this->redirect('/users/login/');
-				} else {
-					$this->Session->setFlash(__('新しいパスワードの保存に失敗しました。もう一度お試しください。'));
 				}
-			} else {
-				// write msg, jump
-				$this->Session->setFlash(__('新しいパスワードを送信しました。'));
-				$this->redirect('/users/login/');
 			}
 		}
+
+		$this->set('title_for_layout', 'パスワード再設定｜LiveDiver｜もっとライブに行きたくなる情報ポータル');
+		$this->render('resetpass');
 	}
 
 	public function changeuser()
